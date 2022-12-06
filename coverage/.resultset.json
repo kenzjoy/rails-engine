@@ -14,6 +14,21 @@
           null
         ]
       },
+      "/Users/mackenzieleng/Desktop/turing_work/3mod/projects/rails-engine/app/controllers/api/v1/merchants_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/mackenzieleng/Desktop/turing_work/3mod/projects/rails-engine/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/Users/mackenzieleng/Desktop/turing_work/3mod/projects/rails-engine/app/mailers/application_mailer.rb": {
         "lines": [
           0,
@@ -34,14 +49,6 @@
         }
       },
       "/Users/mackenzieleng/Desktop/turing_work/3mod/projects/rails-engine/app/jobs/application_job.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/mackenzieleng/Desktop/turing_work/3mod/projects/rails-engine/app/controllers/application_controller.rb": {
         "lines": [
           0,
           0
@@ -70,6 +77,6 @@
         }
       }
     },
-    "timestamp": 1670310747
+    "timestamp": 1670310937
   }
 }
