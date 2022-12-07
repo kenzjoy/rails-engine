@@ -133,7 +133,17 @@ describe 'Items API' do
   end
 
   it 'edge case: returns an error if the merchant id does not exist' do
-    
+    item = create(:item)
+    item_params = { merchant_id: 555555 }
+    headers = {"CONTENT_TYPE" => "application/json"}
+
+    patch "/api/v1/items/#{item.id}", headers: headers, params: JSON.generate({item: item_params})
+
+    parsed_response = JSON.parse(response.body, symbolize_names: true)
+
+    expect(response.status).to eq(400)
+    expect(parsed_response[:data]).to have_key(:message)
+    expect(parsed_response[:data][:message]).to eq("This item cannot be edited")
   end
 
 end

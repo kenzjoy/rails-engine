@@ -14,8 +14,11 @@ class Api::V1::ItemsController < ApplicationController
 
   def update
     item = Item.find(params[:id])
-    item.update!(item_params)
-    render json: ItemSerializer.new(item)
+    if item.update(item_params)
+      render json: ItemSerializer.new(item)
+    else 
+      render json: {data: {message: "This item cannot be edited"}}, status: 400
+    end
   end
 
   private
