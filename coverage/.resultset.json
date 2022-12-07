@@ -54,6 +54,30 @@
           null
         ]
       },
+      "/Users/mackenzieleng/Desktop/turing_work/3mod/projects/rails-engine/app/serializers/merchant_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/mackenzieleng/Desktop/turing_work/3mod/projects/rails-engine/app/serializers/item_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
       "/Users/mackenzieleng/Desktop/turing_work/3mod/projects/rails-engine/app/mailers/application_mailer.rb": {
         "lines": [
           0,
@@ -68,26 +92,6 @@
         "lines": [
           0,
           null,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/mackenzieleng/Desktop/turing_work/3mod/projects/rails-engine/app/serializers/merchant_serializer.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/mackenzieleng/Desktop/turing_work/3mod/projects/rails-engine/app/serializers/item_serializer.rb": {
-        "lines": [
-          0,
-          0,
-          0,
           0
         ],
         "branches": {
@@ -122,6 +126,6 @@
         }
       }
     },
-    "timestamp": 1670394611
+    "timestamp": 1670396180
   }
 }
