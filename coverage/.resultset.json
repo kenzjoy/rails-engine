@@ -73,6 +73,26 @@
         "branches": {
         }
       },
+      "/Users/mackenzieleng/Desktop/turing_work/3mod/projects/rails-engine/app/serializers/merchant_serializer.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/mackenzieleng/Desktop/turing_work/3mod/projects/rails-engine/app/serializers/item_serializer.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/Users/mackenzieleng/Desktop/turing_work/3mod/projects/rails-engine/app/jobs/application_job.rb": {
         "lines": [
           0,
@@ -102,6 +122,6 @@
         }
       }
     },
-    "timestamp": 1670389410
+    "timestamp": 1670394611
   }
 }
