@@ -31,6 +31,22 @@
           null,
           1,
           1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          2,
           null,
           null
         ]
@@ -47,20 +63,6 @@
           1,
           1,
           null,
-          1,
-          null
-        ]
-      },
-      "/Users/mackenzieleng/Desktop/turing_work/3mod/projects/rails-engine/app/serializers/merchant_serializer.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          6,
           null,
           null
         ]
@@ -74,6 +76,20 @@
           null,
           1,
           1,
+          null,
+          null
+        ]
+      },
+      "/Users/mackenzieleng/Desktop/turing_work/3mod/projects/rails-engine/app/serializers/merchant_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null
         ]
@@ -126,6 +142,6 @@
         }
       }
     },
-    "timestamp": 1670397081
+    "timestamp": 1670438109
   }
 }
