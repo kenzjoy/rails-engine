@@ -51,7 +51,16 @@ describe 'Merchants API' do
   end
 
   it 'sad path: returns an error if the merchant id does not exist' do
+    id = create(:merchant).id
+    bad_id = id + 1
 
+    get "/api/v1/merchants/#{bad_id}"
+
+    parsed_response = JSON.parse(response.body, symbolize_names: true)
+
+    expect(response.status).to eq(404)
+    expect(parsed_response[:data]).to have_key(:message)
+    expect(parsed_response[:data][:message]).to eq("Merchant not found")
   end
 
   it 'shows all of the items for a given merchant id' do
