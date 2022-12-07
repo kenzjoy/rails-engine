@@ -1,8 +1,9 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/mackenzieleng/Desktop/turing_work/3mod/projects/rails-engine/app/models/merchant.rb": {
+      "/Users/mackenzieleng/Desktop/turing_work/3mod/projects/rails-engine/app/models/item.rb": {
         "lines": [
+          1,
           1,
           null
         ]
@@ -14,7 +15,14 @@
           null
         ]
       },
-      "/Users/mackenzieleng/Desktop/turing_work/3mod/projects/rails-engine/app/controllers/api/v1/merchants_controller.rb": {
+      "/Users/mackenzieleng/Desktop/turing_work/3mod/projects/rails-engine/app/models/merchant.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/mackenzieleng/Desktop/turing_work/3mod/projects/rails-engine/app/controllers/api/v1/items_controller.rb": {
         "lines": [
           1,
           1,
@@ -30,6 +38,19 @@
       "/Users/mackenzieleng/Desktop/turing_work/3mod/projects/rails-engine/app/controllers/application_controller.rb": {
         "lines": [
           1,
+          null
+        ]
+      },
+      "/Users/mackenzieleng/Desktop/turing_work/3mod/projects/rails-engine/app/controllers/api/v1/merchants_controller.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          null,
+          null,
+          1,
+          1,
+          null,
           null
         ]
       },
@@ -81,6 +102,6 @@
         }
       }
     },
-    "timestamp": 1670374059
+    "timestamp": 1670389410
   }
 }
