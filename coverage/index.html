@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-12-06T23:56:20-07:00">2022-12-06T23:56:20-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-12-07T00:11:21-07:00">2022-12-07T00:11:21-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="red">
-  60.98%
+  62.79%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.66
+         0.79
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>41</b> relevant lines,
-    <span class="green"><b>25</b> lines covered</span> and
+    <b>43</b> relevant lines,
+    <span class="green"><b>27</b> lines covered</span> and
     <span class="red"><b>16</b> lines missed. </span>
     (<span class="red">
-  60.98%
+  62.79%
 </span>
 )
   </div>
@@ -206,10 +206,10 @@
             <td class="strong t-file__name"><a href="#03b94a30058a685a4ef055d99d0b5a9a131dca0c" class="src_link" title="app/serializers/merchant_serializer.rb">app/serializers/merchant_serializer.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
             <td class="cell--number">10</td>
-            <td class="cell--number">4</td>
-            <td class="cell--number">4</td>
+            <td class="cell--number">6</td>
+            <td class="cell--number">6</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
+            <td class="cell--number">1.83</td>
             
           </tr>
         
@@ -758,8 +758,8 @@
      </span>
      covered at
      <span class="covered_strength">
-       <span class="yellow">
-         1.0
+       <span class="green">
+         1.5
        </span>
     </span> hits/line
     )
@@ -772,8 +772,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>8</b> relevant lines,
-    <span class="green"><b>8</b> lines covered</span> and
+    <b>10</b> relevant lines,
+    <span class="green"><b>10</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -814,10 +814,10 @@
             <td class="strong t-file__name"><a href="#03b94a30058a685a4ef055d99d0b5a9a131dca0c" class="src_link" title="app/serializers/merchant_serializer.rb">app/serializers/merchant_serializer.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
             <td class="cell--number">10</td>
-            <td class="cell--number">4</td>
-            <td class="cell--number">4</td>
+            <td class="cell--number">6</td>
+            <td class="cell--number">6</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
+            <td class="cell--number">1.83</td>
             
           </tr>
         
@@ -1042,7 +1042,7 @@
 
             
 
-            <code class="ruby">    render json: Item.all</code>
+            <code class="ruby">    render json: ItemSerializer.new(Item.all)</code>
           </li>
         </div>
       
@@ -1086,7 +1086,7 @@
 
             
 
-            <code class="ruby">    render json: Item.find(params[:id])</code>
+            <code class="ruby">    render json: ItemSerializer.new(Item.find(params[:id]))</code>
           </li>
         </div>
       
@@ -1795,8 +1795,8 @@
     
 
     <div class="t-line-summary">
-      <b>4</b> relevant lines.
-      <span class="green"><b>4</b> lines covered</span> and
+      <b>6</b> relevant lines.
+      <span class="green"><b>6</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -1874,24 +1874,24 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="7">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="7">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  # attribute :item_count do |object|</code>
+            
+
+            <code class="ruby">  attribute :item_count do |object|</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="8">
-            
-            
-
+          <li class="covered" data-hits="6" data-linenumber="8">
+            <span class="hits">6</span>
             
 
-            <code class="ruby">  #   object.items.count</code>
+            
+
+            <code class="ruby">    object.items.count</code>
           </li>
         </div>
       
@@ -1902,7 +1902,7 @@
 
             
 
-            <code class="ruby">  # end</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       

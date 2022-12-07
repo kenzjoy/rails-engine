@@ -4,7 +4,7 @@ class MerchantSerializer
 
   has_many :items
 
-  # attribute :item_count do |object|
-  #   object.items.count
-  # end
+  attribute :item_count do |object|
+    object.items.count
+  end
 end

@@ -41,16 +41,13 @@
           null
         ]
       },
-      "/Users/mackenzieleng/Desktop/turing_work/3mod/projects/rails-engine/app/controllers/api/v1/merchants_controller.rb": {
+      "/Users/mackenzieleng/Desktop/turing_work/3mod/projects/rails-engine/app/serializers/item_serializer.rb": {
         "lines": [
           1,
           1,
-          2,
-          null,
-          null,
-          1,
           1,
           null,
+          1,
           null
         ]
       },
@@ -62,19 +59,22 @@
           null,
           1,
           null,
-          null,
-          null,
+          1,
+          6,
           null,
           null
         ]
       },
-      "/Users/mackenzieleng/Desktop/turing_work/3mod/projects/rails-engine/app/serializers/item_serializer.rb": {
+      "/Users/mackenzieleng/Desktop/turing_work/3mod/projects/rails-engine/app/controllers/api/v1/merchants_controller.rb": {
         "lines": [
           1,
           1,
-          1,
+          2,
+          null,
           null,
           1,
+          1,
+          null,
           null
         ]
       },
@@ -126,6 +126,6 @@
         }
       }
     },
-    "timestamp": 1670396180
+    "timestamp": 1670397081
   }
 }
