@@ -70,4 +70,12 @@ describe 'Items API' do
     expect(item_data).to have_key(:merchant_id)
     expect(item_data[:merchant_id]).to be_an(Integer)
   end
+
+  xit 'sad path: returns an error when given an invalid item id' do
+
+  end
+
+  xit 'edge case: returns an error when given an item id as a string' do
+
+  end
 end

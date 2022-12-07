@@ -50,20 +50,7 @@ describe 'Merchants API' do
     expect(merchant[:name]).to be_a(String)
   end
 
-  # it 'sad path: returns an error if the merchant id does not exist' do
-  #   merchant = create(:merchant)
+  xit 'sad path: returns an error if the merchant id does not exist' do
 
-  #   fake = merchant.id + 1
-
-  #   get "/api/v1/merchants/#{fake}"
-
-  #   response = JSON.parse(response.body, symbolize_names: true)
-
-  #   expect(response).to_not be_successful
-  #   expect(response.status).to eq(404)
-
-
-  # end
-
-  
+  end
 end
