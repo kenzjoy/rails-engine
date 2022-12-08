@@ -19,7 +19,7 @@ RSpec.describe Merchant, type: :model do
         result = Merchant.search_merchant("iLl")
 
         expect(result).to be_a(Merchant)
-        expect(result).to eq(@merchant_3)
+        expect(result).to eq(@merchant_1)
       end
     end
   end
