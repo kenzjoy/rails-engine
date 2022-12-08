@@ -158,4 +158,19 @@ describe 'Items API' do
     expect{ Item.find(item.id) }.to raise_error(ActiveRecord::RecordNotFound)
   end
 
+  it 'can get the merchant data for a given item id' do
+    merchant = create(:merchant, name: "Murray's Magic Mushrooms")
+    item = create(:item, merchant_id: merchant.id)
+
+    get "/api/v1/items/#{item.id}/merchant"
+
+    merchant = JSON.parse(response.body, symbolize_names: true)
+
+    expect(merchant[:data]).to have_key(:id)
+    expect(merchant[:data][:id]).to be_a(String)
+
+    expect(merchant[:data][:attributes]).to have_key(:name)
+    expect(merchant[:data][:attributes][:name]).to be_a(String)
+  end
+
 end
