@@ -17,10 +17,11 @@ describe 'merchants search API' do
     
     expect(search_parsed.length).to eq(1)
     expect(search_parsed[:data]).to have_key(:id)
-    expect(search_parsed[:data][:id]).to eq("#{merchant_1.id}")
+    expect(search_parsed[:data][:id]).to eq("#{merchant_3.id}")
     expect(search_parsed[:data][:id]).to_not eq("#{merchant_2.id}")
+    expect(search_parsed[:data][:id]).to_not eq("#{merchant_1.id}")
     expect(search_parsed[:data][:attributes]).to have_key(:name)
-    expect(search_parsed[:data][:attributes][:name]).to eq("Millionaire's Monopoly")
+    expect(search_parsed[:data][:attributes][:name]).to eq("aMARIllO's OAsis")
   end
 
   it 'sad path: returns no merchants if there is not a query match' do

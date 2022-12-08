@@ -26,7 +26,7 @@ RSpec.describe Item, type: :model do
         result = Item.search_item("color")
 
         expect(result).to be_an(Item)
-        expect(result).to eq(@item_1)
+        expect(result).to eq(@item_2)
       end
     end
 

@@ -6,6 +6,6 @@ class Item < ApplicationRecord
   end
 
   def self.search_item(name)
-    where("name ILIKE ?", "%#{name}%").first
+    where("name ILIKE ?", "%#{name}%").order(:name).first
   end
 end

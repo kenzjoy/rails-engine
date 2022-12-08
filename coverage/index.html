@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-12-08T15:53:10-07:00">2022-12-08T15:53:10-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-12-08T16:09:21-07:00">2022-12-08T16:09:21-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -2670,7 +2670,7 @@
 
             
 
-            <code class="ruby">    where(&quot;name ILIKE ?&quot;, &quot;%#{name}%&quot;).first</code>
+            <code class="ruby">    where(&quot;name ILIKE ?&quot;, &quot;%#{name}%&quot;).order(:name).first</code>
           </li>
         </div>
       
@@ -2778,7 +2778,7 @@
 
             
 
-            <code class="ruby">    where(&quot;name ILIKE ?&quot;, &quot;%#{name}%&quot;).first</code>
+            <code class="ruby">    where(&quot;name ILIKE ?&quot;, &quot;%#{name}%&quot;).order(name: :desc).first</code>
           </li>
         </div>
       

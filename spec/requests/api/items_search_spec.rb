@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'items search API' do
   it 'returns all items based on search criteria' do
     item_1 = create(:item, name: 'Colorado Kolsch')
-    item_1 = create(:item, name: 'Colorado Kind Ale')
+    item_2 = create(:item, name: 'Colorado Kind Ale')
     item_3 = create(:item, name: 'Backside Stout')
     search = "color"
 
@@ -36,10 +36,10 @@ describe 'items search API' do
     
     expect(search_parsed.length).to eq(1)
     expect(search_parsed[:data]).to have_key(:id)
-    expect(search_parsed[:data][:id]).to eq("#{item_1.id}")
-    expect(search_parsed[:data][:id]).to_not eq("#{item_2.id}")
+    expect(search_parsed[:data][:id]).to eq("#{item_2.id}")
+    expect(search_parsed[:data][:id]).to_not eq("#{item_1.id}")
     expect(search_parsed[:data][:attributes]).to have_key(:name)
-    expect(search_parsed[:data][:attributes][:name]).to eq('Colorado Kolsch')
+    expect(search_parsed[:data][:attributes][:name]).to eq('Colorado Kind Ale')
   end
 
   it 'sad path: returns no items if there is not a query match' do
