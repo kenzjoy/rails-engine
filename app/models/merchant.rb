@@ -4,4 +4,8 @@ class Merchant < ApplicationRecord
   def self.search_merchant(name)
     where("name ILIKE ?", "%#{name}%").first
   end
+
+  def self.search_merchants(name)
+    where("name ILIKE ?", "%#{name}%")
+  end
 end

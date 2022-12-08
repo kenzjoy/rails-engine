@@ -24,7 +24,7 @@ describe 'items search API' do
 
   it 'returns one item based on search criteria' do
     item_1 = create(:item, name: 'Colorado Kolsch')
-    item_1 = create(:item, name: 'Colorado Kind Ale')
+    item_2 = create(:item, name: 'Colorado Kind Ale')
     item_3 = create(:item, name: 'Backside Stout')
     search = "color"
 
