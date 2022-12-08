@@ -141,9 +141,9 @@ describe 'Items API' do
 
     parsed_response = JSON.parse(response.body, symbolize_names: true)
 
-    expect(response.status).to eq(400)
+    expect(response.status).to eq(404)
     expect(parsed_response[:data]).to have_key(:message)
-    expect(parsed_response[:data][:message]).to eq("This item cannot be edited")
+    expect(parsed_response[:data][:message]).to eq("Not Found")
   end
 
   it 'can destroy an item' do

@@ -13,13 +13,25 @@ describe 'merchants search API' do
 
     expect(response).to be_successful
 
-    search = JSON.parse(response.body, symbolize_names: true)
+    search_parsed = JSON.parse(response.body, symbolize_names: true)
 
-    expect(search.length).to eq(1)
-    expect(search[:data]).to have_key(:id)
-    expect(search[:data][:id]).to eq("#{merchant_3.id}")
-    expect(search[:data][:id]).to_not eq("#{merchant_2.id}")
-    expect(search[:data][:attributes]).to have_key(:name)
-    expect(search[:data][:attributes][:name].to eq("amarillo's oasis"))
+    expect(search_parsed.length).to eq(1)
+    expect(search_parsed[:data]).to have_key(:id)
+    expect(search_parsed[:data][:id]).to eq("#{merchant_1.id}")
+    expect(search_parsed[:data][:id]).to_not eq("#{merchant_2.id}")
+    expect(search_parsed[:data][:attributes]).to have_key(:name)
+    expect(search_parsed[:data][:attributes][:name]).to eq("Millionaire's Monopoly")
+  end
+
+  it 'sad path: returns no merchants if there is not a query match' do
+    search = "banana"
+
+    get "/api/v1/merchants/find?name=#{search}"
+    
+    expect(response).to be_successful
+
+    search_parsed = JSON.parse(response.body, symbolize_names: true)
+
+    expect(search_parsed[:data][:merchant]).to eq([])
   end
 end
