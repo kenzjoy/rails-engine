@@ -173,4 +173,6 @@ describe 'Items API' do
     expect(merchant[:data][:attributes][:name]).to be_a(String)
   end
 
+  
+
 end
