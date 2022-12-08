@@ -14,7 +14,7 @@ describe 'merchants search API' do
     expect(response).to be_successful
 
     search_parsed = JSON.parse(response.body, symbolize_names: true)
-
+    
     expect(search_parsed.length).to eq(1)
     expect(search_parsed[:data]).to have_key(:id)
     expect(search_parsed[:data][:id]).to eq("#{merchant_1.id}")
