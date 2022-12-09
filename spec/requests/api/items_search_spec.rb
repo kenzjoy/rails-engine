@@ -105,5 +105,48 @@ describe 'items search API' do
     end
   end
 
+  it 'sad path: returns an error if the given min_price is less than 0' do
+    get "/api/v1/items/find_all?min_price=-420"
+
+    expect(response).to_not be_successful
+    expect(response.status).to eq(400)
+
+    search_parsed = JSON.parse(response.body, symbolize_names: true)
+
+    expect(response.message).to eq("Bad Request")
+  end
+  
+  it 'sad path: returns an error if the given max_price is less than 0' do
+    get "/api/v1/items/find_all?max_price=-420"
+    
+    expect(response).to_not be_successful
+    expect(response.status).to eq(400)
+
+    search_parsed = JSON.parse(response.body, symbolize_names: true)
+
+    expect(response.message).to eq("Bad Request")
+  end
+  
+  it 'sad path: returns an error if both name and min_price are sent' do
+    item_1 = create(:item, name: 'Colorado Kolsch', unit_price: 3.50)
+    item_2 = create(:item, name: 'Colorado Kind Ale', unit_price: 17.89)
+    item_3 = create(:item, name: 'Backside Stout', unit_price: 47.00)
+    item_4 = create(:item, name: 'Avalanche Ale', unit_price: 102.00)
+
+    get "/api/v1/items/find_all?name=color&min_price=4.99"
+
+
+  end
+  
+  # it 'sad path: returns an error if both name and max_price are sent' do
+  #   item_1 = create(:item, name: 'Colorado Kolsch', unit_price: 3.50)
+  #   item_2 = create(:item, name: 'Colorado Kind Ale', unit_price: 17.89)
+  #   item_3 = create(:item, name: 'Backside Stout', unit_price: 47.00)
+  #   item_4 = create(:item, name: 'Avalanche Ale', unit_price: 102.00)
+
+  #   get "/api/v1/items/find_all?name=color&max_price=99.99"
+
+  # end
+
 
 end

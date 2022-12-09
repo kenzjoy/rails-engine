@@ -1,10 +1,10 @@
 class Api::V1::MerchantsSearchController < ApplicationController
-  def find_all
+  def index
     merchants = Merchant.search_merchants(params[:name])
     render json: MerchantSerializer.new(merchants)
   end
 
-  def find
+  def show
     merchant = Merchant.search_merchant(params[:name])
     if merchant.nil?
       render json: {data: {merchant: []}}
