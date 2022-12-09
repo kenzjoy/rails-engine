@@ -51,7 +51,7 @@ describe 'items search API' do
     
     expect(response).to be_successful
     expect(response.status).to eq(200)
-    
+
     search_parsed = JSON.parse(response.body, symbolize_names: true)
 
     expect(search_parsed[:data][:item]).to eq([])
@@ -71,13 +71,39 @@ describe 'items search API' do
     search_parsed = JSON.parse(response.body, symbolize_names: true)
 
     expect(search_parsed[:data].count).to eq(2)
-    expect(search_parsed[:data].include?(item_1)).to_be(false)
+    expect(search_parsed[:data].include?(item_1)).to eq(false)
     
     search_parsed[:data].each do |item|
       expect(item).to have_key(:id)
       expect(item[:id]).to be_a(String)
-      expect(item[:type]).to be_an(Item)
+      expect(item[:type]).to eq("item")
     end
   end
+
+  it 'returns all items with a maximum price based on search criteria' do
+    item_1 = create(:item, unit_price: 3.50)
+    item_2 = create(:item, unit_price: 17.89)
+    item_3 = create(:item, unit_price: 47.00)
+    item_4 = create(:item, unit_price: 102.00)
+
+    search = 99.99
+
+    get "/api/v1/items/find_all?max_price=#{search}"
+
+    expect(response).to be_successful
+    expect(response.status).to eq(200)
+
+    search_parsed = JSON.parse(response.body, symbolize_names: true)
+
+    expect(search_parsed[:data].count).to eq(3)
+    expect(search_parsed[:data].include?(item_4)).to eq(false)
+    
+    search_parsed[:data].each do |item|
+      expect(item).to have_key(:id)
+      expect(item[:id]).to be_a(String)
+      expect(item[:type]).to eq("item")
+    end
+  end
+
 
 end

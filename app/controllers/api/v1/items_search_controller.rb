@@ -1,6 +1,10 @@
 class Api::V1::ItemsSearchController < ApplicationController
   def find_all
-    items = Item.search_items(params[:name])
+    if params[:name]
+      items = Item.search_items(params[:name])
+    elsif params[:min_price]
+      items = Item.min_price(params[:min_price])
+    end
     render json: ItemSerializer.new(items)
   end
 
