@@ -17,7 +17,7 @@ class Api::V1::ItemsController < ApplicationController
     if item.update(item_params)
       render json: ItemSerializer.new(item)
     else 
-      render json: {data: {message: "This item cannot be edited"}}, status: 400
+      render json: {data: {message: "Not Found"}}, status: 404
     end
   end
 

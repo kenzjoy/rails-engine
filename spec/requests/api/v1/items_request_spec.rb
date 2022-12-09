@@ -31,8 +31,6 @@ describe 'Items API' do
   end
 
   it 'sad path: returns an empty parse when there are no items' do
-    create_list(:item, 0)
-
     get '/api/v1/items'
 
     expect(response).to be_successful
@@ -141,9 +139,9 @@ describe 'Items API' do
 
     parsed_response = JSON.parse(response.body, symbolize_names: true)
 
-    expect(response.status).to eq(400)
+    expect(response.status).to eq(404)
     expect(parsed_response[:data]).to have_key(:message)
-    expect(parsed_response[:data][:message]).to eq("This item cannot be edited")
+    expect(parsed_response[:data][:message]).to eq("Not Found")
   end
 
   it 'can destroy an item' do
