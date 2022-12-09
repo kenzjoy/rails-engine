@@ -10,6 +10,7 @@ RSpec.describe Item, type: :model do
       @item_1 = create(:item, name: 'Colorado Kolsch', unit_price: 3.50)
       @item_2 = create(:item, name: 'Colorado Kind Ale', unit_price: 17.89)
       @item_3 = create(:item, name: 'Backside Stout', unit_price: 47.00)
+      @item_4 = create(:item, name: 'Avalanche Ale', unit_price: 102.00)
     end
 
     describe '#search_items' do
@@ -34,13 +35,15 @@ RSpec.describe Item, type: :model do
       it 'returns any item with a price equal to or greater than a given amount' do
         result = Item.min_price("4.99")
 
-        expect(result).to eq([@item_3, @item_2])
+        expect(result).to eq([@item_4, @item_3, @item_2])
       end
     end
 
     describe '#max_price' do
       it 'returns any item with a price equal to or less than a given amount' do
+        result = Item.max_price("99.99")
 
+        expect(result).to eq([@item_3, @item_2, @item_1])
       end
     end
 

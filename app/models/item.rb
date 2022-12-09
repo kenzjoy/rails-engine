@@ -14,4 +14,9 @@ class Item < ApplicationRecord
     where("unit_price >= ?", unit_price.to_f)
     .order(:name)
   end
+
+  def self.max_price(unit_price)
+    where("unit_price <= ?", unit_price.to_f)
+    .order(:name)
+  end
 end
