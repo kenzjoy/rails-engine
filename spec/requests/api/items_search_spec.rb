@@ -10,6 +10,7 @@ describe 'items search API' do
     get "/api/v1/items/find_all?name=#{search}"
     
     expect(response).to be_successful
+    expect(response.status).to eq(200)
 
     search_parsed = JSON.parse(response.body, symbolize_names: true)
 
@@ -31,10 +32,11 @@ describe 'items search API' do
     get "/api/v1/items/find?name=#{search}"
 
     expect(response).to be_successful
+    expect(response.status).to eq(200)
 
     search_parsed = JSON.parse(response.body, symbolize_names: true)
     
-    expect(search_parsed.length).to eq(1)
+    expect(search_parsed.count).to eq(1)
     expect(search_parsed[:data]).to have_key(:id)
     expect(search_parsed[:data][:id]).to eq("#{item_2.id}")
     expect(search_parsed[:data][:id]).to_not eq("#{item_1.id}")
@@ -48,9 +50,34 @@ describe 'items search API' do
     get "/api/v1/items/find?name=#{search}"
     
     expect(response).to be_successful
-
+    expect(response.status).to eq(200)
+    
     search_parsed = JSON.parse(response.body, symbolize_names: true)
 
     expect(search_parsed[:data][:item]).to eq([])
   end
+
+  it 'returns all items with a minimum price based on search criteria' do
+    item_1 = create(:item, unit_price: 3.50)
+    item_2 = create(:item, unit_price: 17.89)
+    item_3 = create(:item, unit_price: 47.00)
+    search = 4.99
+
+    get "/api/v1/items/find_all?min_price=#{search}"
+
+    expect(response).to be_successful
+    expect(response.status).to eq(200)
+
+    search_parsed = JSON.parse(response.body, symbolize_names: true)
+
+    expect(search_parsed[:data].count).to eq(2)
+    expect(search_parsed[:data].include?(item_1)).to_be(false)
+    
+    search_parsed[:data].each do |item|
+      expect(item).to have_key(:id)
+      expect(item[:id]).to be_a(String)
+      expect(item[:type]).to be_an(Item)
+    end
+  end
+
 end

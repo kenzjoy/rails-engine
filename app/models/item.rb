@@ -6,6 +6,12 @@ class Item < ApplicationRecord
   end
 
   def self.search_item(name)
-    where("name ILIKE ?", "%#{name}%").order(:name).first
+    where("name ILIKE ?", "%#{name}%")
+    .order(:name).first
+  end
+
+  def self.min_price(unit_price)
+    where("unit_price >= ?", unit_price.to_f)
+    .order(:name)
   end
 end

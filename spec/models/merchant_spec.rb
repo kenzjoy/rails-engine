@@ -27,7 +27,7 @@ RSpec.describe Merchant, type: :model do
       it 'returns all merchants that match search criteria' do
         result = Merchant.search_merchants("iLl")
 
-        expect(result.length).to eq(3)
+        expect(result.count).to eq(3)
         expect(result).to eq([@merchant_1, @merchant_2, @merchant_3])
       end
     end

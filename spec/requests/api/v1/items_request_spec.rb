@@ -31,8 +31,6 @@ describe 'Items API' do
   end
 
   it 'sad path: returns an empty parse when there are no items' do
-    create_list(:item, 0)
-
     get '/api/v1/items'
 
     expect(response).to be_successful
